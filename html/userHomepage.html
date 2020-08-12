@@ -8,9 +8,50 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	</head>
 	<body>
-		<nav class="nav justify-content-end" style="background-color: black; height: 40pxpx;">            
-			<p style="color: white;margin-right: 10px;">New User? <a href="register.html">Join us Now!</a></p>
-		</nav>
+		<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#rentModal">Open modal for @mdo</button>
+
+		<div class="modal fade" id="rentModal" tabindex="-1" role="dialog" aria-labelledby="rentModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="rentModalLabel">Enter your car details:</h5>
+			</div>
+			<div class="modal-body">
+				<form>
+				<div class="form-group">
+					<label for="car_name" class="col-form-label">Car Name:</label>
+					<input type="text" class="form-control" id="car_name">
+				</div>
+				<div class="form-group">
+					<label for="car_description" class="col-form-label">Car Description:</label>
+					<input type="text" class="form-control" id="car_description">
+				</div>
+				<div class="form-group">
+					<label for="car_charges" class="col-form-label">Car Charges:</label>
+					<input type="number" class="form-control" id="car_charges">
+				</div>
+				<div class="form-group">
+					<label for="car_location" class="col-form-label">Pick-up Location:</label>
+					<input type="text" class="form-control" id="car_location">
+				</div>
+				<div class="form-group">
+					<label for="car_fuel" class="col-form-label">Car Fuel::</label>
+					<select id="car_fuel" class="form-control">
+						<option>Choose..</option>
+						<option>Petrol</option>
+						<option>Diesel</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="car_mile" class="col-form-label">Miles:</label>
+					<input type="number" class="form-control" id="car_mile">
+				</div>
+				<input type="submit" class="btn btn-danger" id="submit"/>
+				</form>
+			</div>
+			</div>
+		</div>
+		</div>
 		<div class="container-fluid">
 			<div class="card-group" id="cars_to_rent">
 				<div class="row">
@@ -62,7 +103,7 @@
 			</div>
 		</div>
 		<script type="text/javascript" src="../js/main.js"></script>
-		<script type="text/javascript" src="../js/u"></script>
+		<!-- <script type="text/javascript" src="../js/userHomepage.js"></script> -->
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
