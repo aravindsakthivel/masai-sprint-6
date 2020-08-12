@@ -83,6 +83,7 @@ class UserDataBase extends CreateDataBase{
             carData.requestedBy = []
             usersAllData.listed.push(carData)
             this.updateDB(usersAllData)
+            return 0
         }
         else{
             let uniqueId = usersAllData.listed.length
@@ -90,10 +91,29 @@ class UserDataBase extends CreateDataBase{
             carData.requestedBy = []
             usersAllData.listed.push(carData)
             this.updateDB(usersAllData)
+            return uniqueId
         }
     }
+
+    
+}
+
+
+class Ledger extends CreateDataBase{
+    constructor(name){
+        super(name)
+    }
+
+
+    addToLedger(carData){
+        let allData = this.allData()
+        allData.unshift(carData)
+        this.updateDB(allData)
+    }
+
 }
 
 
 let regUsers = new CreateDataBase('Registered_Users')
 let lgdUser = new CurrentUser('Current_User')
+let carLedger = new Ledger('listed_car_ledger')

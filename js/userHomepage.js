@@ -3,6 +3,7 @@ let crnUserDataBase = new UserDataBase(currentUser.UserName)
 
 
 window.onload = () => {
+    pageLoad()
     let addCars = document.querySelector('form')
     addCars.addEventListener('submit', listCars)
 }
@@ -23,5 +24,39 @@ const listCars = () => {
         Location:location
     }
     console.log(carDetails)
-    crnUserDataBase.listCars(carDetails)
+    let carId = crnUserDataBase.listCars(carDetails)
+    carLedger.addToLedger({Name:currentUser.UserName, carNo:carId})
+}
+
+
+const pageLoad = () =>{
+    let allUserInfo = carLedger.allData()
+    for(let i = 0; i < allUserInfo.length; i++){
+        console.log(allUserInfo[i].Name)
+        if(currentUser.UserName === allUserInfo[i].Name){
+            continue
+        }
+        else{
+            let indivUser = new UserDataBase(allUserInfo[i].Name)
+            let indivUserAllData = indivUser.allData()
+            console.log(indivUserAllData)
+            let carId = Number(allUserInfo[i].carNo)
+            console.log(indivUserAllData)
+            if(indivUserAllData.listed[carId].requestedBy.length === 0){
+                renderDom(indivUserAllData.listed[carId])
+            }
+        }
+    }
+}
+
+
+const renderDom = (carInfo) =>{
+    let carsHolder = document.getElementById('cars_holder')
+    carsHolder.innerHTML += `
+        <div class="card">
+            <div class="card-title">${carInfo.Name}</div>
+            <div class="card-body">
+                ${carInfo.Description}
+            </div>
+        </div>`
 }
