@@ -16,11 +16,15 @@ const listCars = () => {
     let description = carDataForm.get("car_description")
     let charges = carDataForm.get("car_charges")
     let location = carDataForm.get("car_location")
+    let fuel = carDataForm.get("car_fuel")
+    let mile = carDataForm.get("car_mile")
     let carDetails = {
         Name:carName,
         Description:description,
         Charges:charges,
-        Location:location
+        Location:location,
+        Fuel:fuel,
+        Miles:mile 
     }
     console.log(carDetails)
     crnUserDataBase.listCars(carDetails)
