@@ -6,6 +6,8 @@ window.onload = () => {
     pageLoad()
     let addCars = document.querySelector('form')
     addCars.addEventListener('submit', listCars)
+    // let logOutBtn = document.getElementById('logout_btn')
+    // logOutBtn.addEventListener('click', logout)
 }
 
 
@@ -29,7 +31,7 @@ const listCars = () => {
     }
     console.log(carDetails)
     let carId = crnUserDataBase.listCars(carDetails)
-    carLedger.addToLedger({Name:currentUser.UserName, carNo:carId})
+    carLedger.addToLedger({Name:currentUser.UserName, carNo:carId, FullName:currentUser.FullName})
 }
 
 
@@ -47,14 +49,16 @@ const pageLoad = () =>{
             let carId = Number(allUserInfo[i].carNo)
             console.log(indivUserAllData)
             if(indivUserAllData.listed[carId].requestedBy.length === 0){
-                renderDom(indivUserAllData.listed[carId], carId)
+                renderDom(indivUserAllData.listed[carId], i)
             }
         }
     }
+    let carsHolder = document.getElementById('cars_holder')
+    carsHolder.addEventListener('click', goToCar)
 }
 
 
-const renderDom = (carInfo, id) =>{
+const renderDom = (carInfo, vehicleNo) =>{
     let carsHolder = document.getElementById('cars_holder')
     carsHolder.innerHTML += `
         <div class="col-6">
@@ -64,7 +68,7 @@ const renderDom = (carInfo, id) =>{
                         <img src="../Resources/car1.jpg" class="card-img" alt="...">
                     </div>
                     <div class="col-md-8">
-                        <div class="card-body">
+                        <div class="card-body pb-0">
                             <h5 class="card-title">${carInfo.Name}</h5>
                             <h6 class="card-text">
                                 <span class="badge badge-secondary">${carInfo.Miles} km</span>
@@ -72,11 +76,31 @@ const renderDom = (carInfo, id) =>{
                                 <span class="badge badge-secondary">${carInfo.Location}</span>
                             </h6>                                      
                         <h6>
-                            <button type="button" class="btn btn-danger btn-sm">More Details</button>
+                            <button type="button" class="btn btn-danger btn-sm" id='${vehicleNo}'>More Details</button>
                         </h6>
                         </div>   
                     </div>
                 </div>
             </div>
         </div>`
+}
+
+
+const goToCar = () =>{
+    if(event.target.nodeName == 'BUTTON'){
+        console.log(event.target.id)
+        let query = new URLSearchParams()
+        query.append('q', event.target.id)
+        setTimeout(() =>{
+            window.location.assign('../html/carPage.html'+"?"+query.toString())
+        }, 300)
+    }
+    
+}
+
+
+const logout = () =>{
+    setTimeout(() => {
+        window.location.replace('../html/login.html')
+    }, 300)
 }
