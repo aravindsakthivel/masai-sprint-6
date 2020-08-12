@@ -47,20 +47,36 @@ const pageLoad = () =>{
             let carId = Number(allUserInfo[i].carNo)
             console.log(indivUserAllData)
             if(indivUserAllData.listed[carId].requestedBy.length === 0){
-                renderDom(indivUserAllData.listed[carId])
+                renderDom(indivUserAllData.listed[carId], carId)
             }
         }
     }
 }
 
 
-const renderDom = (carInfo) =>{
+const renderDom = (carInfo, id) =>{
     let carsHolder = document.getElementById('cars_holder')
     carsHolder.innerHTML += `
-        <div class="card">
-            <div class="card-title">${carInfo.Name}</div>
-            <div class="card-body">
-                ${carInfo.Description}
+        <div class="col-6">
+            <div class="card" style="margin:10px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="../Resources/car1.jpg" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">${carInfo.Name}</h5>
+                            <h6 class="card-text">
+                                <span class="badge badge-secondary">${carInfo.Miles} km</span>
+                                <span class="badge badge-secondary">${carInfo.Fuel}</span>
+                                <span class="badge badge-secondary">${carInfo.Location}</span>
+                            </h6>                                      
+                        <h6>
+                            <button type="button" class="btn btn-danger btn-sm">More Details</button>
+                        </h6>
+                        </div>   
+                    </div>
+                </div>
             </div>
         </div>`
 }
