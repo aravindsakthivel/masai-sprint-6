@@ -61,5 +61,39 @@ class CurrentUser extends CreateDataBase{
 }
 
 
+class UserDataBase extends CreateDataBase{
+    constructor(name){
+        super(name)
+        this.init = () =>{
+            let result = JSON.parse(localStorage.getItem(this.name))
+            if(!result){
+                this.updateDB({})
+            }
+        }
+    }
+
+
+    listCars(carData){
+        let usersAllData = this.allData()
+        if(Object.keys(usersAllData).length === 0){
+            console.log(5)
+            usersAllData.listed = []
+            usersAllData.requested = []
+            carData.id = 0
+            carData.requestedBy = []
+            usersAllData.listed.push(carData)
+            this.updateDB(usersAllData)
+        }
+        else{
+            let uniqueId = usersAllData.listed.length
+            carData.id = uniqueId
+            carData.requestedBy = []
+            usersAllData.listed.push(carData)
+            this.updateDB(usersAllData)
+        }
+    }
+}
+
+
 let regUsers = new CreateDataBase('Registered_Users')
 let lgdUser = new CurrentUser('Current_User')
