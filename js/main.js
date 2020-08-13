@@ -73,12 +73,20 @@ class UserDataBase extends CreateDataBase{
     }
 
 
-    listCars(carData){
+    dataHolder(){
         let usersAllData = this.allData()
         if(Object.keys(usersAllData).length === 0){
             console.log(5)
             usersAllData.listed = []
             usersAllData.requested = []
+            this.updateDB(usersAllData)
+        }
+    }
+
+    listCars(carData){
+        let usersAllData = this.allData()
+        if(usersAllData.listed.length === 0){
+            console.log(5)
             carData.id = 0
             carData.requestedBy = []
             usersAllData.listed.push(carData)
@@ -95,6 +103,19 @@ class UserDataBase extends CreateDataBase{
         }
     }
 
+
+    carRented(no, requester){
+        let usersAllData = this.allData()
+        usersAllData.listed[no].requestedBy.push(requester)
+        this.updateDB(usersAllData)
+    }
+
+
+    carRequested(carInfo){
+        let usersAllData = this.allData()
+        usersAllData.requested.push(carInfo)
+        this.updateDB(usersAllData)
+    }
     
 }
 
