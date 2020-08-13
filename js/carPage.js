@@ -47,9 +47,11 @@ const loadCarPage = () =>{
 
 
 const requestCar = (whoseCar, id, carLedger, car) =>{
-    // whoseCar.carRented(id, currentUser.UserName)
-    // let crnUserDataBase = new UserDataBase(currentUser.UserName)
-    // crnUserDataBase.carRequested(carLedger[car])
+
+    whoseCar.carRented(id, currentUser.UserName)
+    let crnUserDataBase = new UserDataBase(currentUser.UserName)
+    crnUserDataBase.carRequested(carLedger[car])
+    
     let finalMsg = document.getElementById('estimate_hld')
     footer.style.display = 'none'
     finalMsg.innerHTML = ""
