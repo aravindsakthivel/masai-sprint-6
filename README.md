@@ -64,6 +64,6 @@ Upon entering the details the user can view his/her listed cars in his profile p
 ---
 
 
-© [Aravind S]() [GitHub] https://github.com/aravindsakthivel
+© [Aravind S](https://github.com/aravindsakthivel) 
 
-© [Falak]() [Github] https://github.com/falakthkr
+© [Falak](https://github.com/falakthkr) 
