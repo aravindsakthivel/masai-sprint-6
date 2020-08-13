@@ -8,6 +8,8 @@
  4. Car Listing
  5. Profile Page
  6. Car Details
+ 7. Estimated Costs
+ 8. Final Invoice
   
 
 #### Registration Page
