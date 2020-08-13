@@ -1,4 +1,4 @@
-### masaisprint6
+### masai-sprint-6
 
 # Wheels - Vehicle Renting System
 ### Contents:
