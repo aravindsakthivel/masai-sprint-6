@@ -102,9 +102,9 @@ const requestCar = (whoseCar, id, carLedger, car) =>{
                 <div class="card border-0">
                     <div class='card-title text-success align-self-center'><h4>Success</h4></div>
                     <div class="card-body">
-                    <p><u>Charges Per Day: </u>${charge}</p>
-                    <p><u>total days: </u>${noOfDays}</p>
-                    <p><u>Total charges: </u>${finalCharge}</p>
+                    <p><b>Charges Per Day: ₹</b>${charge}</p>
+                    <p><b>Total no. of Days: </b>${noOfDays}</p>
+                    <p><b>Total charge: ₹</b>${finalCharge}</p>
                     </div>
                 </div>`
             let rentBtn = document.getElementById('rent_btn')
