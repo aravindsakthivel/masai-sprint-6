@@ -29,8 +29,7 @@ const renderCarListDom = (allCars) =>{
     carsHolder.innerHTML = ''
     console.log(allCars)
     for(let i = 0; i < allCars.length; i++){
-        if(allCars[i].Flag){
-            carsHolder.innerHTML += `
+        carsHolder.innerHTML += `
             <div class="card mb-2">
                 <div class="card-body">
                     <div class="row">
@@ -47,11 +46,6 @@ const renderCarListDom = (allCars) =>{
                     </div>
                 </div>
             </div> `
-        }
-        else if(i === allCars.length - 1){
-            carsHolder.innerHTML = 'You havent listed any cars'
-        }
-        
     }
 
 }
