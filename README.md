@@ -18,3 +18,11 @@
 * Registered Users and Member Login Page
 
 ![Login Page](https://github.com/aravindsakthivel/masai-sprint-6/blob/master/Resources/loginPage2.png)
+
+---
+### Home Page
+<p>The Home Page displays all **available** cars for rent</p>
+![Home Page](https://github.com/aravindsakthivel/masai-sprint-6/blob/master/Resources/homePage3.png)
+
+---
+
