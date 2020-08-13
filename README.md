@@ -21,7 +21,8 @@
 
 ---
 ### Home Page
-<p>The Home Page displays all **available** cars for rent</p>
+<p>The Home Page displays all <b>available</b> cars for rent</p>
+
 ![Home Page](https://github.com/aravindsakthivel/masai-sprint-6/blob/master/Resources/homePage3.png)
 
 ---
