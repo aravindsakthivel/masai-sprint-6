@@ -23,6 +23,7 @@ const getTotal = (value) =>{
 }
 
 const loadCarPage = () =>{
+    let chargeHolder = document.getElementById('charges_hld')
     let query = window.location.search
     let url = new URLSearchParams(query)
     let selCar = (url.get('q'))
@@ -35,6 +36,7 @@ const loadCarPage = () =>{
         let whoseCarAllData = whoseCar.allData()
         let carInfo = whoseCarAllData.listed[allCarInfo[selCar].carNo]
         charge = carInfo.Charges
+        chargeHolder.innerText = 'X ' + Number(charge)
         console.log(charge)
         let carOwnername = allCarInfo[selCar].FullName
         let estimateHld = document.getElementById('estimate_hld')
