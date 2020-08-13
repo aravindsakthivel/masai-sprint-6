@@ -69,7 +69,7 @@ const renderDom = (carInfo, vehicleNo) =>{
             <div class="card" style="margin:10px;">
                 <div class="row no-gutters">
                     <div class="col-md-4">
-                        <img src=${carInfo.Image} class="card-img" alt="car image">
+                        <img src=${carInfo.Image} class="card-img" alt="car image" style="width:210px;height:125px">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body pb-0">
