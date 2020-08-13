@@ -1,19 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <style src="../css/login&register.css"></style>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<body>
-    <div class="container-fluid">
-        
-    </div>
-    <script type="text/javascript" src="../js/main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/de9b2fe369.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="btn btn-primary" href="../html/profilePage.html" role="button">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-dark ml-2" data-toggle="modal" data-target="#rentModal">List</button>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-dark float-right" id="logout_btn">Logout</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="modal fade" id="rentModal" tabindex="-1" role="dialog" aria-labelledby="rentModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="rentModalLabel">Enter your car details:</h5>
+            </div>
+            <div class="modal-body">
+                <form>
+                <div class="form-group">
+                    <label for="car_name" class="col-form-label">Car Name:</label>
+                    <input type="text" class="form-control" name="car_name" id="car_name">
+                </div>
+                <div class="form-group">
+                    <label for="car_description" class="col-form-label">Car Description:</label>
+                    <input type="text" class="form-control"  name="car_description" id="car_description">
+                </div>
+                <div class="form-group">
+                    <label for="car_charges" class="col-form-label">Car Charges:</label>
+                    <input type="number" class="form-control"  name="car_charges" id="car_charges">
+                </div>
+                <div class="form-group">
+                    <label for="car_location" class="col-form-label">Pick-up Location:</label>
+                    <input type="text" class="form-control"  name="car_location" id="car_location">
+                </div>
+                <div class="form-group">
+                    <label for="car_fuel" class="col-form-label">Car Fuel::</label>
+                    <select  name="car_fuel" id="car_fuel" class="form-control">
+                        <option>Choose..</option>
+                        <option value="Petrol">Petrol</option>
+                        <option value="Diesel">Diesel</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="car_mile" class="col-form-label">Miles:</label>
+                    <input type="number" class="form-control" name="car_mile" id="car_mile">
+                </div>
+                <input type="submit" class="btn btn-danger" id="submit"/>
+                </form>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12" >
+                <div class="row" id="cars_holder">
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="../js/main.js"></script>
+        <script type="text/javascript" src="../js/userHomepage.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </body>
 </html>

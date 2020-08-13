@@ -73,16 +73,25 @@ class UserDataBase extends CreateDataBase{
     }
 
 
-    listCars(carData){
+    dataHolder(){
         let usersAllData = this.allData()
         if(Object.keys(usersAllData).length === 0){
             console.log(5)
             usersAllData.listed = []
             usersAllData.requested = []
+            this.updateDB(usersAllData)
+        }
+    }
+
+    listCars(carData){
+        let usersAllData = this.allData()
+        if(usersAllData.listed.length === 0){
+            console.log(5)
             carData.id = 0
             carData.requestedBy = []
             usersAllData.listed.push(carData)
             this.updateDB(usersAllData)
+            return 0
         }
         else{
             let uniqueId = usersAllData.listed.length
@@ -90,10 +99,42 @@ class UserDataBase extends CreateDataBase{
             carData.requestedBy = []
             usersAllData.listed.push(carData)
             this.updateDB(usersAllData)
+            return uniqueId
         }
     }
+
+
+    carRented(no, requester){
+        let usersAllData = this.allData()
+        usersAllData.listed[no].requestedBy.push(requester)
+        this.updateDB(usersAllData)
+    }
+
+
+    carRequested(carInfo){
+        let usersAllData = this.allData()
+        usersAllData.requested.push(carInfo)
+        this.updateDB(usersAllData)
+    }
+    
+}
+
+
+class Ledger extends CreateDataBase{
+    constructor(name){
+        super(name)
+    }
+
+
+    addToLedger(carData){
+        let allData = this.allData()
+        allData.unshift(carData)
+        this.updateDB(allData)
+    }
+
 }
 
 
 let regUsers = new CreateDataBase('Registered_Users')
 let lgdUser = new CurrentUser('Current_User')
+let carLedger = new Ledger('listed_car_ledger')
