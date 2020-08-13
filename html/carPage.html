@@ -10,6 +10,7 @@
         <script src="https://kit.fontawesome.com/de9b2fe369.js" crossorigin="anonymous"></script>
     </head>
     <body>
+<<<<<<< HEAD
         <nav class="navbar navbar-expand-md navbar-light bg-light">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -65,6 +66,45 @@
                                     <option value="15" >15</option>
                                 </select>
                                 <h4 class=" mt-1 ml-2" id="charges_hld"></h4>
+=======
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12" id="request_btn_hld">
+                    <button type="button" class="btn btn-lg" data-toggle="modal" id="rent_btn" data-target="#estimateModal"><i class="fas fa-car text-dark"></i></button>
+                    <div class="modal fade" id="estimateModal" tabindex="-1" role="dialog" aria-labelledby="estimateModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="estimateModalLabel"></h5>
+                                </div>
+                                <div class="modal-body" id="estimate_hld">
+                                    <div class="d-flex">
+                                        <select class="form-control w-75  mr-2" id="no_of_days">
+                                            <option>Days</option>
+                                            <option value="1" >1</option>
+                                            <option value="2" >2</option>
+                                            <option value="3" >3</option>
+                                            <option value="4" >4</option>
+                                            <option value="5" >5</option>
+                                            <option value="6" >6</option>
+                                            <option value="7" >7</option>
+                                            <option value="8" >8</option>
+                                            <option value="9" >9</option>
+                                            <option value="10" >10</option>
+                                            <option value="11" >11</option>
+                                            <option value="12" >12</option>
+                                            <option value="13" >13</option>
+                                            <option value="14" >14</option>
+                                            <option value="15" >15</option>
+                                        </select>
+                                        <h4 class=" mt-1 ml-2" id="charges_hld"></h4>
+                                    </div>
+                                    <h4 class="float-left pt-2" id="final_amount">know estimate</h4>
+                                </div>
+                                <div class="modal-footer" id="ftr" style="display: none;">
+                                    <button type="button" class="btn btn-primary"  id="request_btn">Request</button>
+                                </div>
+>>>>>>> fa687147fa5b10a5e7e0513bb5cffb7a4e0a88b3
                             </div>
                             <h4 class="float-left pt-2" id="final_amount">know estimate</h4>
                         </div>
