@@ -28,7 +28,13 @@ const renderCarListDom = (allCars) =>{
     let carsHolder = document.getElementById('pills-listed')
     carsHolder.innerHTML = ''
     console.log(allCars)
+    let rented = 'Available'
+    let txtClr = 'badge-success'
     for(let i = 0; i < allCars.length; i++){
+        if(allCars[i].requestedBy.length !== 0){
+            rented = 'Booked'
+            txtClr = 'badge-secondary'
+        }
         carsHolder.innerHTML += `
             <div class="card mb-2">
                 <div class="card-body">
@@ -39,7 +45,7 @@ const renderCarListDom = (allCars) =>{
                             </div>
                         </div>
                         <div class="col-9">
-                            <h4>${allCars[i].Name}</h4>
+                            <div class='d-flex'><h4>${allCars[i].Name}</h4><h6 class='mt-1 ml-3'><span class="badge ${txtClr}">${rented}</span></h6></div>
                             <span class="ml-1"><small><span class="font-weight-bold" style="color: gray;">Location: </small></span><small><span class="font-weight-bold">${allCars[i].Location}</span></small>
                             <span class="ml-5"><small><span class="font-weight-bold" style="color: gray;">Charges: </small></span><small><span class="font-weight-bold">${allCars[i].Charges}</span></small>
                         </div>
