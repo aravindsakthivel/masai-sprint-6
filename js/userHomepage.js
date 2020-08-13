@@ -1,5 +1,6 @@
 let currentUser = lgdUser.allData()
 let crnUserDataBase = new UserDataBase(currentUser.UserName)
+crnUserDataBase.dataHolder()
 
 
 window.onload = () => {
