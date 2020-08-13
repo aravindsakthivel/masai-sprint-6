@@ -31,6 +31,7 @@ const listCars = () => {
         Miles:mile 
     }
     console.log(carDetails)
+    $('#rentModal').modal('hide')
     let carId = crnUserDataBase.listCars(carDetails)
     carLedger.addToLedger({Name:currentUser.UserName, carNo:carId, FullName:currentUser.FullName})
 }
