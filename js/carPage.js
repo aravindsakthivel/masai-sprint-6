@@ -51,6 +51,7 @@ const loadCarPage = () =>{
         console.log(charge)
         let carOwnername = allCarInfo[selCar].FullName
         let estimateHld = document.getElementById('estimate_hld')
+        loadInnerInfo(carInfo, carOwnername)
         let requestBtn = document.getElementById('request_btn')
         requestBtn.addEventListener('click', () => {
             requestCar(whoseCar, allCarInfo[selCar].carNo, allCarInfo, selCar)
@@ -58,6 +59,26 @@ const loadCarPage = () =>{
     }
 }
 
+
+const loadInnerInfo = (carinfo, name) =>{
+    console.log(carinfo)
+    let imageHolder =  document.getElementById('car_image')
+    let nameHolder = document.getElementById('car_name')
+    let descriptionHolder =  document.getElementById('car_description')
+    let listerName = document.getElementById('lister_name')
+    let typeHolder = document.getElementById('car_type')
+    let milesHolder = document.getElementById('car_miles')
+    let locationHolder = document.getElementById('car_location')
+    let chargeHolder = document.getElementById('car_charges')
+    chargeHolder.innerText = 'Per Day: ' + carinfo.Charges
+    listerName.innerText = 'Owner: ' + name
+    imageHolder.src = carinfo.Image
+    descriptionHolder.textContent ="Description: " + carinfo.Description
+    nameHolder.textContent = carinfo.Name
+    typeHolder.textContent = "Type: " + carinfo.Fuel
+    milesHolder.textContent = "Miles: " + carinfo.Miles
+    locationHolder.textContent = "Location: " + carinfo.Location
+}
 
 const requestCar = (whoseCar, id, carLedger, car) =>{
     let crnUserDataBase = new UserDataBase(currentUser.UserName)
@@ -72,7 +93,6 @@ const requestCar = (whoseCar, id, carLedger, car) =>{
             <span class="sr-only">Loading...</span>
         </div>`
     let crnUserRequests = crnUserDataBase.allData()
-    console.log(crnUserRequests.requested)
     if(crnUserRequests.requested.length === 0){
         setTimeout(()=> {
             finalMsg.innerHTML = ""
@@ -82,9 +102,9 @@ const requestCar = (whoseCar, id, carLedger, car) =>{
                 <div class="card border-0">
                     <div class='card-title text-success align-self-center'><h4>Success</h4></div>
                     <div class="card-body">
-                    <p><u>Charges Per Day: </u>${charge}</p>
-                    <p><u>total days: </u>${noOfDays}</p>
-                    <p><u>Total charges: </u>${finalCharge}</p>
+                    <p><b>Charges Per Day: ₹</b>${charge}</p>
+                    <p><b>Total no. of Days: </b>${noOfDays}</p>
+                    <p><b>Total charge: ₹</b>${finalCharge}</p>
                     </div>
                 </div>`
             let rentBtn = document.getElementById('rent_btn')
@@ -101,7 +121,7 @@ const requestCar = (whoseCar, id, carLedger, car) =>{
             modalHeading.innerText = 'Report'
             billModalBody.innerHTML += `
                 <div class="card border-0">
-                    <div class='card-title text- align-self-center'><h4>You already rented ${carLedger[car].CarName} from ${carLedger[car].FullName}</h4></div>
+                    <div class='card-title text- align-self-center'><h4>You already rented ${crnUserRequests.requested[0].CarName} from ${crnUserRequests.requested[0].FullName}</h4></div>
                 </div>`
             let rentBtn = document.getElementById('rent_btn')
             rentBtn.textContent = 'Rented'
