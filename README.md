@@ -14,3 +14,7 @@
 ![Registration Page](https://github.com/aravindsakthivel/masai-sprint-6/blob/master/Resources/regPage1.png)
 
 ---
+### Login Page
+* Registered Users and Member Login Page
+
+![Login Page](https://github.com/aravindsakthivel/masai-sprint-6/blob/master/Resources/loginPage2.png)
