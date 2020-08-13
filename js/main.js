@@ -73,12 +73,14 @@ class UserDataBase extends CreateDataBase{
     }
 
 
-    dataHolder(){
+    dataHolder(info){
         let usersAllData = this.allData()
         if(Object.keys(usersAllData).length === 0){
             console.log(5)
             usersAllData.listed = []
             usersAllData.requested = []
+            usersAllData.personalInfo = []
+            usersAllData.personalInfo.push(info)
             this.updateDB(usersAllData)
         }
     }
@@ -89,6 +91,7 @@ class UserDataBase extends CreateDataBase{
             console.log(5)
             carData.id = 0
             carData.requestedBy = []
+            carData.requestHistory = []
             usersAllData.listed.push(carData)
             this.updateDB(usersAllData)
             return 0
@@ -97,6 +100,7 @@ class UserDataBase extends CreateDataBase{
             let uniqueId = usersAllData.listed.length
             carData.id = uniqueId
             carData.requestedBy = []
+            carData.requestHistory = []
             usersAllData.listed.push(carData)
             this.updateDB(usersAllData)
             return uniqueId
@@ -107,6 +111,7 @@ class UserDataBase extends CreateDataBase{
     carRented(no, requester){
         let usersAllData = this.allData()
         usersAllData.listed[no].requestedBy.push(requester)
+        usersAllData.listed[no].requestHistory.push(requester)
         this.updateDB(usersAllData)
     }
 
