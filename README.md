@@ -45,3 +45,15 @@ Upon entering the details the user can view his/her listed cars in his profile p
 * Displaying Details of the car that the user clicks <em>more details</em> on.
 
 ![Car Details](https://github.com/aravindsakthivel/masai-sprint-6/blob/master/Resources/carDetails6.png)
+
+---
+#### Estimated Cost
+* Displays total estimated cost of the car selected depending on total charges and number of days selected by the user.
+
+![Estimated Cost](https://github.com/aravindsakthivel/masai-sprint-6/blob/master/Resources/estimateCost7.png)
+
+---
+### Final Invoice
+* Displays the complete invoice once user has confirmed.
+
+![Final Invoice](https://github.com/aravindsakthivel/masai-sprint-6/blob/master/Resources/InvoiceAlert8.png)
