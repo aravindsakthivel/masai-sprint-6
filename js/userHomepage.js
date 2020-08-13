@@ -6,8 +6,8 @@ window.onload = () => {
     pageLoad()
     let addCars = document.querySelector('form')
     addCars.addEventListener('submit', listCars)
-    // let logOutBtn = document.getElementById('logout_btn')
-    // logOutBtn.addEventListener('click', logout)
+    let logOutBtn = document.getElementById('logout_btn')
+    logOutBtn.addEventListener('click', logout)
 }
 
 
