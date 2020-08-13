@@ -1,6 +1,6 @@
 let currentUser = lgdUser.allData()
 let crnUserDataBase = new UserDataBase(currentUser.UserName)
-crnUserDataBase.dataHolder()
+crnUserDataBase.dataHolder(currentUser)
 
 
 window.onload = () => {
@@ -33,7 +33,7 @@ const listCars = () => {
     console.log(carDetails)
     $('#rentModal').modal('hide')
     let carId = crnUserDataBase.listCars(carDetails)
-    carLedger.addToLedger({Name:currentUser.UserName, carNo:carId, FullName:currentUser.FullName})
+    carLedger.addToLedger({Name:currentUser.UserName, carNo:carId, FullName:currentUser.FullName, CarName:carName})
 }
 
 
