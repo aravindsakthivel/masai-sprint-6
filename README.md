@@ -1,6 +1,16 @@
-# masaisprint6
+### masaisprint6
 
 # Wheels - Vehicle Renting System
-This project was made as part of the 6th Sprint / Project work in the Apache Batch at Masai School. It is the collaborative work of Aravind and Falak in Module 3.
+#### Contents:
+ 1. Landing Page
+ 1. Characters Page
+ 1. Videos Page
+ 1. Popularity Page
+  
 
-<img src="./Resources/regPage1.png">
+### Registration Page
+* Register New User
+
+![Registration Page](https://github.com/aravindsakthivel/masai-sprint-6/blob/master/Resources/regPage1.png)
+
+---
