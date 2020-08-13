@@ -16,6 +16,7 @@ window.onload = () => {
 const listCars = () => {
     event.preventDefault()
     let carDataForm = new FormData(event.target)
+    let imgUrl = carDataForm.get('car_img')
     let carName = carDataForm.get("car_name")
     let description = carDataForm.get("car_description")
     let charges = carDataForm.get("car_charges")
@@ -28,7 +29,8 @@ const listCars = () => {
         Charges:charges,
         Location:location,
         Fuel:fuel,
-        Miles:mile 
+        Miles:mile,
+        Image:imgUrl
     }
     console.log(carDetails)
     $('#rentModal').modal('hide')
@@ -63,11 +65,11 @@ const pageLoad = () =>{
 const renderDom = (carInfo, vehicleNo) =>{
     let carsHolder = document.getElementById('cars_holder')
     carsHolder.innerHTML += `
-        <div class="col-6">
+        <div class="col-6 pr-0">
             <div class="card" style="margin:10px;">
                 <div class="row no-gutters">
                     <div class="col-md-4">
-                        <img src="../Resources/car1.jpg" class="card-img" alt="...">
+                        <img src=${carInfo.Image} class="card-img" alt="car image">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body pb-0">
