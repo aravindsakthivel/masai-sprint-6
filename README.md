@@ -60,3 +60,10 @@ Upon entering the details the user can view his/her listed cars in his profile p
 * Displays the complete invoice once user has confirmed.
 
 ![Final Invoice](https://github.com/aravindsakthivel/masai-sprint-6/blob/master/Resources/InvoiceAlert8.png)
+
+---
+
+
+© [Aravind S]() [GitHub] https://github.com/aravindsakthivel
+
+© [Falak]() [Github] https://github.com/falakthkr
