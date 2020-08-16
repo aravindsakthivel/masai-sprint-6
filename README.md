@@ -2,14 +2,14 @@
 
 # Wheels - Vehicle Renting System
 ### Contents:
- 1. Registration Page
- 2. Login Page
- 3. Home Page
- 4. Car Listing
- 5. Profile Page
- 6. Car Details
- 7. Estimated Costs
- 8. Final Invoice
+#### 1. Registration Page
+#### 2. Login Page
+#### 3. Home Page
+#### 4. Car Listing
+#### 5. Profile Page
+#### 6. Car Details
+#### 7. Estimated Costs
+#### 8. Final Invoice
   
 ---
 
