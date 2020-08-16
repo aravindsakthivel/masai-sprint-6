@@ -63,7 +63,8 @@ Upon entering the details the user can view his/her listed cars in his profile p
 
 ---
 
+the current product works using local storage.
 
-© [Aravind S](https://github.com/aravindsakthivel) 
+© [Aravindan S](https://github.com/aravindsakthivel) 
 
 © [Falak](https://github.com/falakthkr) 
