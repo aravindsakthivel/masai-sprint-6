@@ -105,6 +105,6 @@ const goToCar = () =>{
 
 const logout = () =>{
     setTimeout(() => {
-        window.location.replace('../html/login.html')
+        window.location.replace('../index.html')
     }, 300)
 }
